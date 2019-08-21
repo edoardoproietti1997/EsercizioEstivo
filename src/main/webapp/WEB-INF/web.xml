@@ -15,6 +15,16 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>inserisciTransazione</servlet-name>
+		<servlet-class>it.dstech.servlet.ServletInserimentoTransazione</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>inserisciTransazione</servlet-name>
+		<url-pattern>/inserisciTransazione</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>login</servlet-name>
 		<servlet-class>it.dstech.servlet.ServletLogin</servlet-class>
 	</servlet>
@@ -23,6 +33,4 @@
 		<servlet-name>login</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-
-
 </web-app>

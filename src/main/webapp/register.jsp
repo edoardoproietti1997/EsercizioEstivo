@@ -60,13 +60,10 @@ button:hover {
 </style>
 <body>
 
-	<form action="register" style="border: 1px solid #ccc"
-		method="POST">
+	<form action="registrazione" style="border: 1px solid #ccc" method="POST">
 		<div class="container">
 			<h1>
-				<p>
 				Inserire i dati per la registrazione
-				</p>
 			</h1>
 			<hr>
 
@@ -75,7 +72,7 @@ button:hover {
 			<label for="psw"><b>Scegli la tua Password</b></label> <input
 				type="password" placeholder="Enter Password" name="password"
 				required>
-			<button type="submit" value="registra">Sign Up</button>
+			<button type="submit" value="registrazione">Sign Up</button>
 		</div>
 	</form>
 	<a href="login.jsp">sei gia' registrato? Clicca qui</a>
