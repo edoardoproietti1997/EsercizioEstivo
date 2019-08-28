@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +27,6 @@ public class ServletRegistrazione extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		DBConnection db = new DBConnection();
 		Account account = new Account();
-		System.out.println(req.getParameter("username"));
 		String username = req.getParameter("username");
 		try {
 			if (db.usernameCheck(username)) {
@@ -37,7 +37,9 @@ public class ServletRegistrazione extends HttpServlet {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		account.setPassword(req.getParameter("password"));
+		account.setUsername(username);
+		String password = (req.getParameter("password"));
+		account.setPassword(password);
 		try {
 			db.addAccount(account);
 			String ok = "registrazione effettuata con successo";
@@ -46,5 +48,9 @@ public class ServletRegistrazione extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		req.setAttribute("username", username);
+		req.setAttribute("password", password);
+		getServletContext().getRequestDispatcher("/homepage.jsp").forward(req, resp);
 	}
+
 }

@@ -11,7 +11,7 @@
 <p>Categoria:</p>
  <input type="text" name="categoria">
 <p>Importo:</p>
- <input type="text" name="importo"> <h1>$$$</h1>
+<input type="text" name="importo"><h1>$$$</h1>
 <p>Descrizione:</p>
  <input type="text" name="descrizione">
    <br>

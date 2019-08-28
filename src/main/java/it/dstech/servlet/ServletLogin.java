@@ -25,15 +25,16 @@ public class ServletLogin extends HttpServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		try {
-			if (db.loginCheck(username, password)) {
-				getServletContext().getRequestDispatcher("/homepage.jsp").forward(req, resp);
+			if (db.loginCheck(username, password) == false) {
+				getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
 			}
-			req.setAttribute("error", "username o password non corretti");
-			
+
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
-
+		getServletContext().getRequestDispatcher("/homepage.jsp").forward(req, resp);
+		req.setAttribute("username", username);
+		req.setAttribute("password", password);
 	}
 }

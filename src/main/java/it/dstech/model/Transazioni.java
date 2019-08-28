@@ -39,4 +39,10 @@ public class Transazioni {
 		this.categoria = categoria;
 	}
 
+	@Override
+	public String toString() {
+		return "Transazioni [data=" + data + ", descrizione=" + descrizione + ", categoria=" + categoria + ", importo="
+				+ importo + "]";
+	}
+
 }
